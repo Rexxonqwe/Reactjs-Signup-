@@ -16,10 +16,10 @@ const createSendToken = (user, statusCode, res) => {
     ),
     httpOnly: true,
   };
-  // if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
-  // res.cookie("jwt", token, cookieOptions);
+  if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
+  res.cookie("jwt", token, cookieOptions);
 
-  console.log(res);
+//   console.log(res);
 
   // Remove password from output
   // user.password = undefined;
